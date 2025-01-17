@@ -1,3 +1,4 @@
+import AboutMedicineShop from "../Component/Aboutmadechin";
 import BannerSlider from "../Component/Banner";
 import DiscountProducts from "../Component/discount";
 import Testimonials from "../Component/Tesiminial";
@@ -10,6 +11,7 @@ const AllHome =()=>{
             <CategorySlider></CategorySlider>
             <DiscountProducts></DiscountProducts>
             <Testimonials></Testimonials>
+            <AboutMedicineShop></AboutMedicineShop>
         </div>
     )
 };
