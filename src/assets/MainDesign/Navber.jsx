@@ -5,6 +5,7 @@ import { PiDotsThreeOutlineVerticalDuotone } from "react-icons/pi";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useContext, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import ThemeToggle from "./Theamtogger";
 // import ThemeToggle from "../theam";
 
 
@@ -122,7 +123,7 @@ const Navber = () => {
 
                 {/* Theme Toggle */}
                 <div className="flex-none">
-                    {/* <ThemeToggle /> */}
+                    <ThemeToggle />
                 </div>
             </div>
 
