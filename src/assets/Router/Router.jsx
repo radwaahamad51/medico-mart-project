@@ -17,6 +17,7 @@ import ManageMedicines from "../User/usermadichinmanage";
 import Payment from "../Payment/payment";
 import PaymentHistory from "../Payment/paymenthistory";
 import PaymentHistorys from "../User/paymentuserhistory";
+import AboutUs from "../MainDesign/Footerreleted/Aboutus";
 
 const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
             {
                 path: "/paymenthistory",
                 element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: "/about",
+                element: <AboutUs></AboutUs>
             },
             
         ]
