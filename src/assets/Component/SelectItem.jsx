@@ -86,6 +86,7 @@ const ProductDetails = () => {
                         key={index}
                         className="flex flex-col md:flex-row gap-8 mb-8 bg-white p-6 rounded-lg shadow-md"
                     >
+                        <h1>radaw</h1>
                         {/* Product Image */}
                         <div className="flex-1">
                             <img

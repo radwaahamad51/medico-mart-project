@@ -22,6 +22,7 @@ import LearnMoreSection from "../Component/Learnmoremoresection";
 import AdminDashboard from "../User/admintotalsummery";
 import AdminManageMedicines from "../User/adminmanagemadichin";
 import AdminPayments from "../User/adminpayment";
+import PrivateRoute from "./protectedroute";
 
 const router = createBrowserRouter([
     {
@@ -54,11 +55,11 @@ const router = createBrowserRouter([
             // },
             {
                 path: "/cart",
-                element: <CartPage></CartPage>
+                element: <PrivateRoute><CartPage></CartPage></PrivateRoute>
             },
             {
                 path: "/singleitem",
-                element: <ProductDetails></ProductDetails>
+                element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>
             },
             {
                 path: "/shop",
@@ -85,7 +86,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <Deshbord></Deshbord>,
+        element:<PrivateRoute><Deshbord></Deshbord></PrivateRoute>,
         children: [
             {
                 path: "managecategory",

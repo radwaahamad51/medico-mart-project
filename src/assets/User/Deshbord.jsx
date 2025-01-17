@@ -24,10 +24,9 @@ const Deshbord = () => {
                 </ul></>
                  :<>
                 <ul className="space-y-2">
-                    <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Dashboard</li>
-                    <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Manage Medicines</li>
+                  
                     <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Payment History</li>
-                    <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Ask For Advertisement</li>
+                   
 
                     <Link to={'/'}>  <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Home</li></Link>
                 </ul></>

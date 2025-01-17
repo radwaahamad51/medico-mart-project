@@ -29,7 +29,7 @@ const ManageMedicines = ({ sellerId }) => {
     useEffect(() => {
         if (user) {
             axios
-                .get(`http://localhost:5000/shop`)
+                .get(`http://localhost:5000/shop?email=${user.email}`)
                 .then((response) => {
                     setMedicines(response.data);
                     setLoading(false);
