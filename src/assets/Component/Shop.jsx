@@ -222,7 +222,7 @@ const Shop = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                     <div className="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-lg p-6 shadow-lg relative">
                         <button
-                            onClick={closeModal}
+                            onClick={closeModals}
                             className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                         >
                             ✖️
