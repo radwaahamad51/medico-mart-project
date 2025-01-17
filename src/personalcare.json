@@ -1,0 +1,75 @@
+{
+  "_id": "67861b0af58fc959f67e5987",
+  "name": "Personal Care Products",
+  "icon": "🛁",
+  "quantity": 20,
+  "image": "https://i.ibb.co.com/BPwQGP9/pngtree-hand-care-logo-png-image-4135028.jpg",
+  "medicines": [
+    {
+      "name": "Isabgul Plus",
+      "quantity": 65,
+      "mg": "4 gm",
+      "discount": 0,
+      "description": "Isabgol Spicy is commonly used for the treatment of constipation. It contains Isabgol. ",
+      "company": "Ibn-Sina Pharmaceuticals Ltd.",
+      "originalPrice": 405.00,
+      "price": 405.00,
+      "image": "https://i.ibb.co.com/dtNGV5f/IMG-20231029-WA0105.webp"
+    },
+    {
+      "name": "Absorbent Cotton Wool",
+      "quantity": 65,
+      "mg": "50 gm",
+      "discount": 0,
+      "description": "Absorbent Cotton Wool 50 gm is used for surgical dressings, cosmetic purposes, etc. ",
+      "company": "Mundipharma (BD) Pvt. Ltd.",
+      "originalPrice": 25.00,
+      "price": 25.00,
+      "image": "https://i.ibb.co.com/JCqqFjn/IMG-20231029-WA0160.webp"
+    },
+    {
+      "name": "N95 Mask Particulate Respirator Face Mask",
+      "quantity": 65,
+      "mg": "Model 3M 8210",
+      "discount": 0,
+      "description": "DispoVan Syringe 100IU U-100 1ml are designed for injecting insulin. ",
+      "company": "Mundipharma (BD) Pvt. Ltd.",
+      "originalPrice": 225.00,
+      "price": 225.00,
+      "image": "https://i.ibb.co.com/gttpBQs/N95-mask-Q93to-Yj.webp"
+    },
+    {
+      "name": "Sunmask",
+      "quantity": 65,
+      "mg": "60gm Tube",
+      "discount": 0,
+      "description": "Sunmask 60gm Tube provides protection against harmful UV rays and manages various skin conditions related to sun exposure. ",
+      "company": "Square Pharmaceuticals PLC..",
+      "originalPrice": 225.00,
+      "price": 225.00,
+      "image": "https://i.ibb.co.com/L93w0sf/IMG-20231021-WA0163.webp"
+    },
+    {
+      "name": "One Time Bandage",
+      "quantity": 65,
+      "mg": "First Aid Strip",
+      "discount": 0,
+      "description": "One Time Bandage (NewStrip) First Aid Strip is designed for wound care and protection. ",
+      "company": "Neoplast Co Ltd.",
+      "originalPrice": 1.80,
+      "price": 1.80,
+      "image": "https://i.ibb.co.com/B3LDHWS/Neo-Strip-First-Aid-trip.webp"
+    },
+    {
+      "name": "Isabgul Plus",
+      "quantity": 65,
+      "mg": "100 gm",
+      "discount": 0,
+      "description": "Each 4 gm contains powder of the following herbs: Isabgul Husk (Plantago ovata): 3 gm Sonapata (Cassia angustifolia): 1 gm",
+      "company": "Mundipharma (BD) Pvt. Ltd.",
+      "originalPrice": 445.50,
+      "price": 445.50,
+      "image": "https://i.ibb.co.com/0j1KJ6t/IMG-20231029-WA0146.webp"
+    }
+  ]
+}

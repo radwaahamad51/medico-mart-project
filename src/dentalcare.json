@@ -1,0 +1,75 @@
+{
+    "_id": "67861b0af58fc959f67e5982",
+    "name": "Dental Care",
+    "icon": "🦷",
+    "quantity": 30,
+    "image": "https://i.ibb.co.com/8jh67Jj/360-F-302681154-9-HOWdv-GLt-CKpfw-O5-B85y-ESsz-G7-Mfml-Ul.jpg",
+    "medicines": [
+        {
+            "name": "Orostar Cool Mint",
+            "quantity": 65,
+            "mg": "120 ml",
+            "discount": 0,
+            "description": "Bad breath, Cavities, Gingivitis,.",
+            "company": "Square Pharmaceuticals PLC.",
+            "originalPrice": 72.22,
+            "price": 72.22,
+            "image": "https://i.ibb.co.com/4FdmNnd/medeasy-orostar-cool-mint.webp"
+        },
+        {
+            "name": "Sensodyne Fresh Gel",
+            "quantity": 65,
+            "mg": "75 gm",
+            "discount": 0,
+            "description": "Sensodyne Fresh Gel 75 gm is known for its effectiveness in keeping teeth clean and healthy.",
+            "company": "GSK",
+            "originalPrice": 190.00,
+            "price": 190.00,
+            "image": "https://i.ibb.co.com/jLRw4nD/IMG-20231029-WA0187.webp"
+        },
+        {
+            "name": "Mediplus DS",
+            "quantity": 65,
+            "mg": "140 gm",
+            "discount": 0,
+            "description": "Mediplus DS 140 gm is known for its effectiveness in keeping teeth clean and healthy. .",
+            "company": "Anfords.",
+            "originalPrice": 128.25,
+            "price": 128.25,
+            "image": "https://i.ibb.co.com/6ZN25Vn/medeasy-mediplus-ds.webp"
+        },
+        {
+            "name": "Mediplus Toothbrush",
+            "quantity": 65,
+            "mg": "Toothbrush",
+            "discount": 0,
+            "description": "Made with soft and nylon bristles, the Mediplus Toothbrush is gentle on the gums.",
+            "company": "Anfords.",
+            "originalPrice": 85.50,
+            "price": 85.50,
+            "image": "https://i.ibb.co.com/cLMZ3Yx/IMG-20231029-WA0079.webp"
+        },
+        {
+            "name": "Listacare Gold",
+            "quantity": 65,
+            "mg": "120 ml",
+            "discount": 0,
+            "description": "Bad breath, Cavities, Gingivitis, Gum disease, Oral hygiene, Plaque, Teeth cleaner & brighter",
+            "company": "General Pharmaceuticals Ltd.",
+            "originalPrice": 72.00,
+            "price": 72.00,
+            "image": "https://i.ibb.co.com/Wgrt3td/IMG-20231019-WA0497.webp"
+        },
+        {
+            "name": "Betadine",
+            "quantity": 65,
+            "mg": "1% w/v",
+            "discount": 0,
+            "description": "Cream or ointment:Therapeutically: As an adjunct to systemic therapy in the following indications.",
+            "company": "City Overseas Ltd..",
+            "originalPrice": 45.00,
+            "price": 45.00,
+            "image": "https://i.ibb.co.com/5vHDdht/IMG-20240122-WA0288.webp"
+        }
+    ]
+}

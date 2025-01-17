@@ -1,0 +1,64 @@
+{
+    "_id": "67861b0af58fc959f67e5984",
+    "name": "Diabetic Care",
+    "icon": "🩸",
+    "quantity": 18,
+    "image": "https://i.ibb.co.com/6JbqQ2S/istockphoto-1316820596-612x612.jpg",
+    "medicines": [
+        {
+            "name": "NovoFine Needle",
+            "quantity": 65,
+            "mg": "3ml",
+            "discount": 0,
+            "description": "The NovoFine Needle 3 ml is designed for injecting insulin into the body and is particularly used for diabetes management.",
+            "company": "Mundipharma (BD) Pvt. Ltd.",
+            "originalPrice": 11.25,
+            "price": 11.25,
+            "image": "https://i.ibb.co.com/HnwVbTY/IMG-20231029-WA0066.webp"
+        },
+        {
+            "name": "Bionime Rightest Test Strip",
+            "quantity": 65,
+            "mg": "Test Strip",
+            "discount": 0,
+            "description": "Bionime Rightest Test Strip GS700S are used with Bionime blood glucose meters to measure blood sugar levels.",
+            "company": "Mundipharma (BD) Pvt. Ltd.",
+            "originalPrice": 635.35,
+            "price": 635.35,
+            "image": "https://i.ibb.co.com/yVz407z/IMG-20231029-WA0049.webp"
+        },
+        {
+            "name": "DispoVan Syringe 100IU",
+            "quantity": 65,
+            "mg": "U-100 1ml",
+            "discount": 0,
+            "description": "DispoVan Syringe 100IU U-100 1ml are designed for injecting insulin. ",
+            "company": "Mundipharma (BD) Pvt. Ltd.",
+            "originalPrice": 9.00,
+            "price": 9.00,
+            "image": "https://i.ibb.co.com/HNrZP1q/IMG-20231029-WA0076-za-OSAYL.webp"
+        },
+        {
+            "name": "GlucoLeader Enhance Blue Test Strip",
+            "quantity": 65,
+            "mg": "25 Strip",
+            "discount": 0,
+            "description": "GlucoLeader Enhance Blue Test Strip 25 Strip are used with Bionime blood glucose meters to measure blood sugar levels.",
+            "company": "Mundipharma (BD) Pvt. Ltd.",
+            "originalPrice": 403.76,
+            "price": 403.76,
+            "image": "https://i.ibb.co.com/WKgdr48/IMG-20231029-WA0064.webp"
+        },
+        {
+            "name": "Insulin Syringe (Korean)100IU",
+            "quantity": 65,
+            "mg": "U-100 1ml",
+            "discount": 0,
+            "description": "GlucoLeader Enhance Blue Test Strip 25 Strip are used with Bionime blood glucose meters to measure blood sugar levels.",
+            "company": "Mundipharma (BD) Pvt. Ltd.",
+            "originalPrice": 10.80,
+            "price": 10.80,
+            "image": "https://i.ibb.co.com/PNJCgCY/IMG-20231029-WA0077.webp"
+        }
+    ]
+}

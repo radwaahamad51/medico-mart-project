@@ -1,0 +1,119 @@
+{
+    "_id": "67861b0af58fc959f67e5980",
+    "name": "OTC Medicine",
+    "icon": "💊",
+    "quantity": 11,
+    "image": "https://i.ibb.co.com/jbg3k2h/istockphoto-1346393009-612x612.jpg",
+    "medicines": [
+      {
+        "name": "Paracetamol",
+        "quantity": 15,
+        "mg": 500,
+        "description": "Used to reduce fever and relieve mild to moderate pain.",
+        "company": "Beximco Pharmaceuticals Ltd.",
+        "originalPrice": 1.0,
+        "price": 1.00,
+        "image": "https://i.ibb.co.com/Qvc8mRV/IMG-20231023-WA0137.webp"
+      },
+      {
+        "name": "Sergel",
+        "quantity": 15,
+        "mg": 20,
+        "description": "Reduces stomach acid and treats gastric ulcers",
+        "company": "Healthcare Pharmaceuticals Ltd.",
+        "originalPrice": 6.44,
+        "price": 6.44,
+        "image": "https://i.ibb.co.com/gM26FqL/IMG-20231019-WA0397.webp"
+      },
+      {
+        "name": "Omidon",
+        "quantity": 15,
+        "mg": 10,
+        "description": "Treats nausea and vomiting, enhances gastrointestinal motility.",
+        "company": "Incepta Pharmaceuticals Ltd.",
+        "originalPrice":3.15,
+        "price":3.15,
+        "image": "https://i.ibb.co.com/KjbJgHm/omidon-10.webp"
+      },
+      {
+        "name": "Napa Extend",
+        "quantity": 15,
+        "mg": 665,
+        "description": "Provides long-lasting relief from fever and mild pain.",
+        "company": "Beximco Pharmaceuticals Ltd.",
+        "originalPrice": 1.80,
+        "price": 1.80,
+        "image": "https://i.ibb.co.com/fGmrzz2/IMG-20231023-WA0128.webp"
+      },
+      {
+        "name": "Dexilend",
+        "quantity": 15,
+        "mg": 30,
+        "description": "Used to treat acid reflux and esophagitis.",
+        "company": "Ziska Pharmaceuticals Ltd.",
+        "originalPrice": 10.20,
+        "price": 10.20,
+        "image": "https://i.ibb.co.com/FmHK2mv/IMG-20231125-WA0073.webp"
+      },
+      {
+        "name": "Rabe",
+        "quantity": 20,
+        "mg": 30,
+        "description": "Effective for treating heartburn and GERD.",
+        "company": "Aristopharma Ltd.",
+        "originalPrice": 9.00,
+        "price": 9.00,
+        "image": "https://i.ibb.co.com/pL8h23D/IMG-20231004-WA0089.webp"
+      },
+      {
+        "name": "Acifix",
+        "quantity": 20,
+        "mg": 30,
+        "description": "Treats ulcers and symptoms of acid reflux.",
+        "company": "Beximco Pharmaceuticals Ltd.",
+        "originalPrice": 3.20,
+        "price": 3.20,
+        "image": "https://i.ibb.co.com/XkDwrs4/IMG-20231023-WA0171.webp"
+      },
+      {
+        "name": "Docopa",
+        "quantity": 7,
+        "mg": 200,
+        "company": "Beximco Pharmaceuticals Ltd.",
+        "originalPrice": 9.00,
+        "price": 9.00,
+        "description": "Relieves throat irritation and reduces coughing.",
+        "image": "https://i.ibb.co.com/FV2c92d/IMG-20231004-WA0130.webp"
+      },
+      {
+        "name": "Fylox",
+        "quantity": 7,
+        "mg": 200,
+        "description": "Eases respiratory discomfort and coughing.",
+        "company": "Radiant Pharmaceuticals Ltd.",
+        "originalPrice": 10.20,
+        "price": 10.20,
+        "image": "https://i.ibb.co.com/HdrTvnm/IMG-20231219-WA0073.webp"
+      },
+      {
+        "name": "Pulmino",
+        "quantity": 7,
+        "mg": 200,
+        "description": "Provides relief for bronchial irritation and cough.",
+        "company": "Renata Limited",
+        "originalPrice":18.50,
+        "price":18.50,
+        "image": "https://i.ibb.co.com/jzpr03M/IMG-20231120-WA0101.webp"
+      },
+      {
+        "name": "Fylox",
+        "quantity": 7,
+        "mg": 200,
+        "description": "Eases respiratory discomfort and coughing.",
+        "company": "Radiant Pharmaceuticals Ltd.",
+        "originalPrice": 9.00,
+        "price": 9.00,
+        "image": "https://i.ibb.co.com/HdrTvnm/IMG-20231219-WA0073.webp"
+      }
+    ]
+  }

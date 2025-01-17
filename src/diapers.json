@@ -1,0 +1,54 @@
+{
+    "_id": "67861b0af58fc959f67e5985",
+    "name": "Diapers",
+    "icon": "🩸",
+    "quantity": 18,
+    "image": "https://i.ibb.co.com/rH2nwdb/images-3.png",
+    "medicines": [
+        {
+            "name": "Avonee Pant Style Diaper",
+            "quantity": 65,
+            "mg": "M 40s (7-12kg)",
+            "discount": 0,
+            "description": "Avonee Pant Style Diaper M 40s (7-12kg) prioritizes the comfort and well-being of your baby. ",
+            "company": "Unimax Industries Ltd.",
+            "originalPrice": 801.00,
+            "price": 801.00,
+            "image": "https://i.ibb.co.com/XXg19rz/4-u-Ho8tuw.webp"
+        },
+        {
+            "name": "Avonee Pant Style Diaper",
+            "quantity": 65,
+            "mg": "S 42s (4-8kg)",
+            "discount": 0,
+            "description": "Avonee Pant Style Diaper S 42s (4-8kg) prioritizes the comfort and well-being of your baby. ",
+            "company": "Unimax Industries Ltd.",
+            "originalPrice": 801.00,
+            "price": 801.00,
+            "image": "https://i.ibb.co.com/rbRfQPt/1.webp"
+        },
+        {
+            "name": "SuperMom Baby Diaper",
+            "quantity": 65,
+            "mg": "M (6-11 KG) 5 PCS",
+            "discount": 0,
+            "description": "SuperMom Baby Diaper M (6-11 KG) 5 PCS prioritizes the comfort and well-being of your baby. ",
+            "company": "Square Toiletries Ltd.",
+            "originalPrice": 144.00,
+            "price": 144.00,
+            "image": "https://i.ibb.co.com/1zn7X3c/default-medicine.webp"
+        },
+        {
+            "name": "Bashundhara Baby Diaper Mini",
+            "quantity": 65,
+            "mg": "XL 4s (11-25kg)",
+            "discount": 0,
+            "description": "Isabgol Spicy is commonly used for the treatment of constipation. It contains Isabgol. ",
+            "company": "Bashundhara Paper Mills Ltd.",
+            "originalPrice": 99.00,
+            "price": 99.00,
+            "image": "https://i.ibb.co.com/s2smvD9/download-1.webp"
+        }
+        
+    ]
+}
