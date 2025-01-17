@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const AboutMedicineShop = () => {
     return (
-        <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <section className="py-16 bg-gray-50 dark:bg-gray-900 max-w-7xl mx-auto">
             <div className="container mx-auto px-5 text-center">
                 {/* Logo */}
                 <motion.div
