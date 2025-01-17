@@ -15,7 +15,7 @@ const CategoriesItem = () => {
     // console.log(Madechin)
     return (
         <div>
-            <div className="bg-white p-4 rounded-lg shadow-md w-64 mt-6 mx-auto ml-4">
+            <div className="bg-white p-4 rounded-lg shadow-md w-64 mt-6 mx-auto ml-4 ">
                 <h2 className="text-lg font-bold mb-4 text-black">Product Categories</h2>
                 <ul>
                     {Madechin.map((category, index) => (

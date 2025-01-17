@@ -161,9 +161,10 @@ const Shop = () => {
                             alt={product.name}
                             className="w-full h-32 object-cover mb-2"
                         />
-                        <h2 className="text-lg font-semibold text-black">{product.name}</h2>
+                        <h2 className="text-lg font-semibold text-black">{product.name} {product.mg}</h2>
                         <p className="text-sm text-gray-500">{product.type}</p>
-                        <p className="text-sm text-gray-500">{product.brand}</p>
+                        
+                        
                         <p className="text-lg font-bold text-green-600">৳ {product.price}</p>
                         {product.originalPrice && (
                             <p className="text-sm text-gray-400 line-through">

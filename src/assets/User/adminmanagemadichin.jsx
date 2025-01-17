@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
-const ManageMedicines = ({ sellerId }) => {
+const AdminManageMedicines = ({ sellerId }) => {
     const [medicines, setMedicines] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const { user } = useContext(AuthContext);
@@ -93,7 +93,7 @@ const ManageMedicines = ({ sellerId }) => {
     };
 
     return (
-        <div>
+        <div className='bg-white'>
             <h1 className="text-2xl font-bold mb-4">Manage Medicines</h1>
             <button
                 onClick={() => setShowModal(true)}
@@ -115,13 +115,13 @@ const ManageMedicines = ({ sellerId }) => {
                 </thead>
                 <tbody>
                     {medicines.map((medicine) => (
-                        <tr key={medicine._id}>
+                        <tr key={medicine._id} className='bg-white'>
                             <td className="border px-4 py-2">{medicine.name}</td>
                             <td className="border px-4 py-2">{medicine.company}</td>
                             <td className="border px-4 py-2">{medicine.price}</td>
                             <td className="border px-4 py-2">{medicine.mg}</td>
                             <td className="border px-4 py-2">{medicine.discount}%</td>
-                            <td> <button className="  px-4 py-2 rounded-md  " onClick={() => handleDelete(medicine._id)}>Delete</button></td>
+                            <td> <button className="  px-4 py-2 rounded-md text-red-600  " onClick={() => handleDelete(medicine._id)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
@@ -219,4 +219,4 @@ const ManageMedicines = ({ sellerId }) => {
     );
 };
 
-export default ManageMedicines;
+export default AdminManageMedicines;

@@ -128,12 +128,17 @@ const DiscountProducts = () => {
             {products.map((product) => (
               <SwiperSlide key={product.id}>
                 <div className="bg-white border rounded-lg shadow-md p-4 hover:shadow-lg transition">
+                {product.discount && (
+                            <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                                {product.discount}% Off
+                            </span>
+                        )}
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-48 object-cover rounded-md mb-4"
                   />
-                  <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+                  <h3 className="text-lg font-semibold mb-2">{product.name}| {product.mg}</h3>
                   <p className="text-gray-500 mb-2">
                     <span className="line-through text-red-500">${product.originalPrice}</span>{' '}
                     <span className="text-green-600 font-bold">

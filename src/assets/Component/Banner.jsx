@@ -17,7 +17,7 @@ const BannerSlider = () => {
   }, []);
 
   return (
-    <section className="relative">
+    <section className="relative mb-8">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation

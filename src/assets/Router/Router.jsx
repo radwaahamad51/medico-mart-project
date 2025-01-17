@@ -18,6 +18,10 @@ import Payment from "../Payment/payment";
 import PaymentHistory from "../Payment/paymenthistory";
 import PaymentHistorys from "../User/paymentuserhistory";
 import AboutUs from "../MainDesign/Footerreleted/Aboutus";
+import LearnMoreSection from "../Component/Learnmoremoresection";
+import AdminDashboard from "../User/admintotalsummery";
+import AdminManageMedicines from "../User/adminmanagemadichin";
+import AdminPayments from "../User/adminpayment";
 
 const router = createBrowserRouter([
     {
@@ -72,6 +76,10 @@ const router = createBrowserRouter([
                 path: "/about",
                 element: <AboutUs></AboutUs>
             },
+            {
+                path: "/products",
+                element: <LearnMoreSection></LearnMoreSection>
+            },
             
         ]
     },
@@ -98,6 +106,18 @@ const router = createBrowserRouter([
             {
                 path: "paymenyhistoryuser",
                 element: <PaymentHistorys></PaymentHistorys>
+            },
+            {
+                path: "admindeshbord",
+                element: <AdminDashboard></AdminDashboard>
+            },
+            {
+                path: "admindemanagemt",
+                element: <AdminManageMedicines></AdminManageMedicines>
+            },
+            {
+                path: "adminpyment",
+                element: <AdminPayments></AdminPayments>
             }
         ]
     }
