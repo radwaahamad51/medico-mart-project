@@ -15,7 +15,7 @@ const AdminSalesReport = () => {
     useEffect(() => {
         // Fetch sales data from the backend
         axios
-            .get("http://localhost:5000/sales") // Replace with your API endpoint
+            .get("https://assignment-12-server-sable-six.vercel.app/sales") // Replace with your API endpoint
             .then((response) => {
                 setSalesData(response.data);
                 setFilteredData(response.data); // Initialize filtered data

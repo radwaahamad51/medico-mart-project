@@ -58,7 +58,7 @@ const ProductDetails = () => {
         };
         console.log(allValue)
 
-        fetch("http://localhost:5000/medichin-oders", {
+        fetch("https://assignment-12-server-sable-six.vercel.app/medichin-oders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

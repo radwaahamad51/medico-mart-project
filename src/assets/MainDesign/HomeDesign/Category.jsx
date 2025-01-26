@@ -7,13 +7,13 @@ const CategorySlider = () => {
 
     // Fetch data from the external JSON file
     useEffect(() => {
-        fetch('http://localhost:5000/medichin-category')
+        fetch('https://assignment-12-server-sable-six.vercel.app/medichin-category')
             .then((response) => response.json())
             .then((data) => setCategories(data))
          
             .catch((error) => console.error('Error fetching categories:', error));
     }, []);
-    console.log(categories)
+    
 
     const scrollLeft = () => {
         sliderRef.current.scrollBy({ left: -200, behavior: 'smooth' });

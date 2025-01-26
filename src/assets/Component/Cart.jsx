@@ -18,7 +18,7 @@ const CartPage = () => {
     useEffect(() => {
         if (user) {
             axios
-                .get(`http://localhost:5000/medichin-oder?email=${user.email}`)
+                .get(`https://assignment-12-server-sable-six.vercel.app/medichin-oder?email=${user.email}`)
                 .then((response) => {
                     setCart(response.data);
                     setLoading(false);
@@ -85,7 +85,7 @@ const CartPage = () => {
         const updatedItem = { Quantity: newQuantity };
         const updatedPrice = unitPrice * newQuantity;
         axios
-            .put(`http://localhost:5000/medichin-oder/${_id}`, updatedItem)
+            .put(`https://assignment-12-server-sable-six.vercel.app/medichin-oder/${_id}`, updatedItem)
             .then(() => {
                 // Update the state with the new quantity
                 setCart((prevCart) =>
@@ -122,7 +122,7 @@ const CartPage = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/medichin-oder/${id}`, {
+                fetch(`https://assignment-12-server-sable-six.vercel.app/medichin-oder/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -147,7 +147,7 @@ const CartPage = () => {
     // Clear the entire cart
     const clearCart = () => {
         axios
-            .delete(`http://localhost:5000/api/cart?email=${user.email}`)
+            .delete(`https://assignment-12-server-sable-six.vercel.app/api/cart?email=${user.email}`)
             .then(() => {
                 setCart([]);
                 Swal.fire("Cleared", "Your cart has been cleared", "success");

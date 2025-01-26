@@ -8,7 +8,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     // Fetch all payments from the backend
     axios
-      .get("http://localhost:5000/paymentsemail") // Replace with your API endpoint
+      .get("https://assignment-12-server-sable-six.vercel.app/paymentsemail") // Replace with your API endpoint
       .then((response) => {
         setPayments(response.data);
         setLoading(false);

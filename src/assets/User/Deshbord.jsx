@@ -19,7 +19,7 @@ const Deshbord = () => {
                     <Link  to={'alluser'} ><li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Manage Users</li></Link>
                     <Link to={'admindemanagemt'}><li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Manage Medicines</li></Link>
                     <Link to={'adminpyment'}><li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Payment</li></Link>
-                    <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Sales Report</li>
+                   <Link to={'selles'}> <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Sales Report</li></Link>
                   <Link to={'managebenner'}>  <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Update home</li></Link>
 
                     <Link to={'/'}>  <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Home</li></Link>
@@ -27,7 +27,7 @@ const Deshbord = () => {
                  :<>
                 <ul className="space-y-2">
                   
-                    <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Payment History</li>
+                   <Link to={'/dashboard/paymenyhistoryuser'}> <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Payment History</li></Link>
                    
 
                     <Link to={'/'}>  <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Home</li></Link>

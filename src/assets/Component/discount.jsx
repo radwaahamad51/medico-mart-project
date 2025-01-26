@@ -66,7 +66,7 @@ const DiscountProducts = () => {
     };
     console.log(allValue)
 
-    fetch("http://localhost:5000/medichin-oders", {
+    fetch("https://assignment-12-server-sable-six.vercel.app/medichin-oders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -93,7 +93,7 @@ const DiscountProducts = () => {
 
   useEffect(() => {
     // Fetch discounted products data from API
-    fetch('http://localhost:5000/shop') // Replace with your API endpoint
+    fetch('https://assignment-12-server-sable-six.vercel.app/shop') // Replace with your API endpoint
       .then((response) => response.json())
       .then((data) => {
         // Filter products to include only those with discount > 0
@@ -104,7 +104,7 @@ const DiscountProducts = () => {
   }, []);
 
   return (
-    <section className="py-10  max-w-7xl mx-auto ">
+    <section className="py-10  max-w-7xl mx-auto  ">
       <div className="container mx-auto px-5">
         <h2 className="text-3xl font-bold text-center mb-10">Discount Products</h2>
         {products.length === 0 ? (
@@ -119,7 +119,7 @@ const DiscountProducts = () => {
             scrollbar={{ draggable: true }} // Enable draggable scrollbar
             breakpoints={{
               // Responsiveness
-              640: { slidesPerView: 1 }, // Mobile
+              360: { slidesPerView: 1 }, // Mobile
               768: { slidesPerView: 2 }, // Tablet
               1024: { slidesPerView: 3 }, // Desktop
             }}
@@ -127,7 +127,7 @@ const DiscountProducts = () => {
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
-                <div className="bg-white border rounded-lg shadow-md p-4 hover:shadow-lg transition">
+                <div className="bg-white border rounded-lg shadow-md p-4 hover:shadow-lg transition  relative  ">
                 {product.discount && (
                             <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
                                 {product.discount}% Off
@@ -145,7 +145,7 @@ const DiscountProducts = () => {
                       ${product.originalPrice - product.discount}
                     </span>
                   </p>
-                  <button onClick={() => openModal(product)} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
+                  <button onClick={() => openModal(product)} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"disabled={!user} >
                     Buy Now
                   </button>
                 </div>

@@ -52,7 +52,7 @@ const AuthProvoder = ({ children }) => {
             .then((result) => {
                 setUser(result.user);
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://assignment-12-server-sable-six.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

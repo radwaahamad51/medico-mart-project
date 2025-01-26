@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AdminPayments = () => {
     const [payments, setPayments] = useState([]);
@@ -9,7 +10,7 @@ const AdminPayments = () => {
     useEffect(() => {
         // Fetch all payments from the backend
         axios
-            .get("http://localhost:5000/paymentsemail") // Replace with your API endpoint
+            .get("https://assignment-12-server-sable-six.vercel.app/paymentsemail") // Replace with your API endpoint
             .then((response) => {
                 setPayments(response.data);
                 setLoading(false);
@@ -23,7 +24,7 @@ const AdminPayments = () => {
     const handleAcceptPayment = (paymentId) => {
         // Update payment status to "Paid"
         axios
-            .put(`http://localhost:5000/payments/${paymentId}`, { status: "Paid" }) // Replace with your API endpoint
+            .put(`https://assignment-12-server-sable-six.vercel.app/payments/${paymentId}`, { status: "Paid" }) // Replace with your API endpoint
             .then((response) => {
                 if (response.data.modifiedCount > 0) {
                     Swal.fire({
@@ -56,54 +57,60 @@ const AdminPayments = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 py-6">
-            <h1 className="text-2xl font-bold mb-6">Payment Management</h1>
-            <table className="w-full border-collapse border border-gray-300">
-                <thead>
-                    <tr className="bg-gray-200">
-                        <th className="border border-gray-300 px-4 py-2 text-left">#</th>
-                        <th className="border border-gray-300 px-4 py-2 text-left">Transaction ID</th>
-                        <th className="border border-gray-300 px-4 py-2 text-left">Amount (৳)</th>
-                        <th className="border border-gray-300 px-4 py-2 text-left">Date</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">Status</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {payments.map((payment, index) => (
-                        <tr key={payment._id}>
-                            <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
-                            <td className="border border-gray-300 px-4 py-2">{payment.transactionId}</td>
-                            <td className="border border-gray-300 px-4 py-2">{payment.price}</td>
-                            <td className="border border-gray-300 px-4 py-2">
-                                {new Date(payment.date).toLocaleDateString()}
-                            </td>
-                            <td
-                                className={`border border-gray-300 px-4 py-2 text-center ${payment.status === "Paid"
-                                    ? "text-green-600"
-                                    : "text-yellow-600"
-                                    }`}
-                            >
-                                {payment.status}
-                            </td>
-                            <td className="border border-gray-300 px-4 py-2 text-center">
-                                {payment.status === "Pending" && (
-                                    <button
-                                        onClick={() => handleAcceptPayment(payment._id)}
-                                        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
-                                    >
-                                        Accept Payment
-                                    </button>
-                                )}
-                                {payment.status === "Paid" && (
-                                    <span className="text-green-500 font-semibold">Completed</span>
-                                )}
-                            </td>
+        <>
+            <Helmet>
+                <title>
+                    Medico | Payment Management
+                </title>
+            </Helmet>
+            <div className="container mx-auto px-4 py-6">
+                <h1 className="text-2xl font-bold mb-6">Payment Management</h1>
+                <table className="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr className="bg-gray-200">
+                            <th className="border border-gray-300 px-4 py-2 text-left">#</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Transaction ID</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Amount (৳)</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Date</th>
+                            <th className="border border-gray-300 px-4 py-2 text-center">Status</th>
+                            <th className="border border-gray-300 px-4 py-2 text-center">Action</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {payments.map((payment, index) => (
+                            <tr key={payment._id}>
+                                <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
+                                <td className="border border-gray-300 px-4 py-2">{payment.transactionId}</td>
+                                <td className="border border-gray-300 px-4 py-2">{payment.price}</td>
+                                <td className="border border-gray-300 px-4 py-2">
+                                    {new Date(payment.date).toLocaleDateString()}
+                                </td>
+                                <td
+                                    className={`border border-gray-300 px-4 py-2 text-center ${payment.status === "Paid"
+                                        ? "text-green-600"
+                                        : "text-yellow-600"
+                                        }`}
+                                >
+                                    {payment.status}
+                                </td>
+                                <td className="border border-gray-300 px-4 py-2 text-center">
+                                    {payment.status === "Pending" && (
+                                        <button
+                                            onClick={() => handleAcceptPayment(payment._id)}
+                                            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+                                        >
+                                            Accept Payment
+                                        </button>
+                                    )}
+                                    {payment.status === "Paid" && (
+                                        <span className="text-green-500 font-semibold">Completed</span>
+                                    )}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div></>
     );
 };
 

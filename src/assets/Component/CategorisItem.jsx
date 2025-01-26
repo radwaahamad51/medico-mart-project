@@ -5,7 +5,7 @@ const CategoriesItem = () => {
     // const Madechin = useLoaderData();
     const [Madechin, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/medichin-category')
+        fetch('https://assignment-12-server-sable-six.vercel.app/medichin-category')
             .then((response) => response.json())
             .then((data) => setCategories(data))
 

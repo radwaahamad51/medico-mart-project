@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ManageCategory = () => {
     const [categories, setCategories] = useState([]);
@@ -14,7 +15,7 @@ const ManageCategory = () => {
     }, []);
 
     const fetchCategories = async () => {
-        const response = await axios.get("http://localhost:5000/medichin-category");
+        const response = await axios.get("https://assignment-12-server-sable-six.vercel.app/medichin-category");
         setCategories(response.data);
     };
 
@@ -29,12 +30,12 @@ const ManageCategory = () => {
     //     if (editingCategory) {
     //         // Update category
     //         await axios.put(
-    //             `http://localhost:5000/api/categories/${editingCategory._id}`,
+    //             `https://assignment-12-server-sable-six.vercel.app/api/categories/${editingCategory._id}`,
     //             newCategory
     //         );
     //     } else {
     //         // Add new category
-    //         await axios.post("http://localhost:5000/api/categories", newCategory);
+    //         await axios.post("https://assignment-12-server-sable-six.vercel.app/api/categories", newCategory);
     //     }
 
     //     fetchCategories();
@@ -64,7 +65,7 @@ const ManageCategory = () => {
 
 
 
-        fetch(`http://localhost:5000/medichin-category/${editingCategory._id}`, {
+        fetch(`https://assignment-12-server-sable-six.vercel.app/medichin-category/${editingCategory._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -109,7 +110,7 @@ const ManageCategory = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/medichin-category/${id}`, {
+                fetch(`https://assignment-12-server-sable-six.vercel.app/medichin-category/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -141,143 +142,149 @@ const ManageCategory = () => {
 
 
     return (
-        <div className="p-6 bg-gray-100 min-h-screen">
-            <h1 className="text-2xl font-bold mb-6">Manage Categories</h1>
+        <>
+            <Helmet>
+                <title>
+                    Medico | Manage Categories
+                </title>
+            </Helmet>
+            <div className="p-6 bg-gray-100 min-h-screen">
+                <h1 className="text-2xl font-bold mb-6">Manage Categories</h1>
 
-            {/* Add Category Button */}
-            <button
-                className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
-                onClick={() => setModalOpen(true)}
-            >
-                Add Category
-            </button>
+                {/* Add Category Button */}
+                <button
+                    className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
+                    onClick={() => setModalOpen(true)}
+                >
+                    Add Category
+                </button>
 
-            {/* Categories Table */}
-            <table className="w-full bg-white rounded shadow-lg">
-                <thead className="bg-gray-200">
-                    <tr>
-                        <th className="p-4 text-left">#</th>
-                        <th className="p-4 text-left">Category Name</th>
-                        <th className="p-4 text-left">Image</th>
-                        <th className="p-4 text-left">Medicines</th>
-                        <th className="p-4 text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {categories.map((category, index) => (
-                        <tr key={category._id} className="border-b">
-                            <td className="p-4">{index + 1}</td>
-                            <td className="p-4">{category.name}</td>
-                            <td className="p-4">
-                                <img
-                                    src={category.image}
-                                    alt={category.name}
-                                    className="w-16 h-16 object-cover rounded"
-                                />
-                            </td>
-                            <td className="p-4">
-                                <ul className="list-disc pl-5 mt-3 mb-3 p-3">
-                                    {category.medicines?.map((medicine, i) => (
-                                        <li key={i} className="flex justify-between mb-4">
-                                            <div>
-                                                <strong>Name:</strong> {medicine.name}{" "}
-                                                <strong>Qty:</strong> {medicine.quantity}
-                                            </div>
-                                            <div className="flex gap-2"> <button
-                                                className="bg-yellow-500 text-white px-3 py-1 rounded"
-                                                onClick={() => handleEditCategory(medicine)}
-                                            >
-                                                Edit
-                                            </button>
-                                                <button
-                                                    className="bg-red-500 text-white px-3 py-1 rounded"
-                                                    onClick={() => handleDelete(medicine)}
-                                                >
-                                                    Delete
-                                                </button></div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </td>
-
+                {/* Categories Table */}
+                <table className="w-full bg-white rounded shadow-lg">
+                    <thead className="bg-gray-200">
+                        <tr>
+                            <th className="p-4 text-left">#</th>
+                            <th className="p-4 text-left">Category Name</th>
+                            <th className="p-4 text-left">Image</th>
+                            <th className="p-4 text-left">Medicines</th>
+                            <th className="p-4 text-center">Actions</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {categories.map((category, index) => (
+                            <tr key={category._id} className="border-b">
+                                <td className="p-4">{index + 1}</td>
+                                <td className="p-4">{category.name}</td>
+                                <td className="p-4">
+                                    <img
+                                        src={category.image}
+                                        alt={category.name}
+                                        className="w-16 h-16 object-cover rounded"
+                                    />
+                                </td>
+                                <td className="p-4">
+                                    <ul className="list-disc pl-5 mt-3 mb-3 p-3">
+                                        {category.medicines?.map((medicine, i) => (
+                                            <li key={i} className="flex justify-between mb-4">
+                                                <div>
+                                                    <strong>Name:</strong> {medicine.name}{" "}
+                                                    <strong>Qty:</strong> {medicine.quantity}
+                                                </div>
+                                                <div className="flex gap-2"> <button
+                                                    className="bg-yellow-500 text-white px-3 py-1 rounded"
+                                                    onClick={() => handleEditCategory(medicine)}
+                                                >
+                                                    Edit
+                                                </button>
+                                                    <button
+                                                        className="bg-red-500 text-white px-3 py-1 rounded"
+                                                        onClick={() => handleDelete(medicine)}
+                                                    >
+                                                        Delete
+                                                    </button></div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </td>
 
-            {/* Add/Edit Modal */}
-            {modalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded shadow-lg w-96">
-                        <h2 className="text-xl font-bold mb-4">
-                            {editingCategory ? "Edit Category" : "Add New Category"}
-                        </h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className="mb-4">
-                                <label className="block mb-2 font-medium">Category Name</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={newCategory.name}
-                                    onChange={handleInputChange}
-                                    className="w-full p-2 border rounded"
-                                    placeholder="Enter category name"
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label className="block mb-2 font-medium">Price</label>
-                                <input
-                                    type="text"
-                                    name="price"
-                                    value={newCategory.price}
-                                    onChange={handleInputChange}
-                                    className="w-full p-2 border rounded"
-                                    placeholder="Enter category name"
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label className="block mb-2 font-medium">Quantity</label>
-                                <input
-                                    type="number"
-                                    name="quantity"
-                                    value={newCategory.quantity}
-                                    onChange={handleInputChange}
-                                    className="w-full p-2 border rounded"
-                                    placeholder="Enter category name"
-                                />
-                            </div>
-                            <div className="mb-4">
-                                <label className="block mb-2 font-medium">Image URL</label>
-                                <input
-                                    type="text"
-                                    name="image"
-                                    value={newCategory.image}
-                                    onChange={handleInputChange}
-                                    className="w-full p-2 border rounded"
-                                    placeholder="Enter image URL"
-                                />
-                            </div>
-                            <div className="flex justify-end space-x-2">
-                                <button
-                                    type="button"
-                                    className="bg-gray-300 px-4 py-2 rounded"
-                                    onClick={() => setModalOpen(false)}
-                                >
-                                    Cancel
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
 
-                                >
-                                    Save
-                                </button>
-                            </div>
-                        </form>
+                {/* Add/Edit Modal */}
+                {modalOpen && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div className="bg-white p-6 rounded shadow-lg w-96">
+                            <h2 className="text-xl font-bold mb-4">
+                                {editingCategory ? "Edit Category" : "Add New Category"}
+                            </h2>
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-4">
+                                    <label className="block mb-2 font-medium">Category Name</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={newCategory.name}
+                                        onChange={handleInputChange}
+                                        className="w-full p-2 border rounded"
+                                        placeholder="Enter category name"
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <label className="block mb-2 font-medium">Price</label>
+                                    <input
+                                        type="text"
+                                        name="price"
+                                        value={newCategory.price}
+                                        onChange={handleInputChange}
+                                        className="w-full p-2 border rounded"
+                                        placeholder="Enter category name"
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <label className="block mb-2 font-medium">Quantity</label>
+                                    <input
+                                        type="number"
+                                        name="quantity"
+                                        value={newCategory.quantity}
+                                        onChange={handleInputChange}
+                                        className="w-full p-2 border rounded"
+                                        placeholder="Enter category name"
+                                    />
+                                </div>
+                                <div className="mb-4">
+                                    <label className="block mb-2 font-medium">Image URL</label>
+                                    <input
+                                        type="text"
+                                        name="image"
+                                        value={newCategory.image}
+                                        onChange={handleInputChange}
+                                        className="w-full p-2 border rounded"
+                                        placeholder="Enter image URL"
+                                    />
+                                </div>
+                                <div className="flex justify-end space-x-2">
+                                    <button
+                                        type="button"
+                                        className="bg-gray-300 px-4 py-2 rounded"
+                                        onClick={() => setModalOpen(false)}
+                                    >
+                                        Cancel
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="bg-blue-500 text-white px-4 py-2 rounded"
+
+                                    >
+                                        Save
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div></>
     );
 };
 

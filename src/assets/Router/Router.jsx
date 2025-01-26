@@ -23,6 +23,8 @@ import AdminDashboard from "../User/admintotalsummery";
 import AdminManageMedicines from "../User/adminmanagemadichin";
 import AdminPayments from "../User/adminpayment";
 import PrivateRoute from "./protectedroute";
+import Profile from "../AuthPage/updateprofile";
+import SalesReport from "../User/salesreport";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: '/medichin-category/:id',
                 element: <SingleItem></SingleItem>,
-                loader: ({ params }) => fetch(`http://localhost:5000/medichin-category/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-12-server-sable-six.vercel.app/medichin-category/${params.id}`)
             },
             // {
             //     path: '/medichin-category',
@@ -76,6 +78,10 @@ const router = createBrowserRouter([
             {
                 path: "/about",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "/updateprofile",
+                element: <PrivateRoute><Profile></Profile></PrivateRoute>
             },
             {
                 path: "/products",
@@ -119,6 +125,10 @@ const router = createBrowserRouter([
             {
                 path: "adminpyment",
                 element: <AdminPayments></AdminPayments>
+            },
+            {
+                path: "selles",
+                element: <SalesReport></SalesReport>
             }
         ]
     }

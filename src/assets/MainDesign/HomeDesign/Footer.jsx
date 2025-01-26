@@ -23,21 +23,13 @@ const Footer = () => {
                                     About Us
                                 </a>
                             </li>
-                            <li>
-                                <a href="/contact" className="hover:text-green-400 transition">
-                                    Contact Us
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a href="/shop" className="hover:text-green-400 transition">
                                     Shop Now
                                 </a>
                             </li>
-                            <li>
-                                <a href="/faq" className="hover:text-green-400 transition">
-                                    FAQs
-                                </a>
-                            </li>
+                            
                         </ul>
                     </div>
 

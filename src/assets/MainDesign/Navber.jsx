@@ -32,7 +32,7 @@ const Navber = () => {
                 <summary className="btn btn-ghost">
                     <PiDotsThreeOutlineVerticalDuotone />
                 </summary>
-                <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow font-playfair">
+                <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow font-playfair text-stone-100">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/shop">Shop</Link></li>
                     <li><Link to="/cart">Cart</Link></li>
@@ -59,7 +59,7 @@ const Navber = () => {
             <div className="navbar-end gap-5 ">
                 {/* If logged in */}
                 {user && user?.email ? (
-                    <button onClick={logOut} className="btn btn-primary ">
+                    <button onClick={logOut} className="btn btn-primary  ">
                         Log-Out
                     </button>
                 ) : (
@@ -99,7 +99,7 @@ const Navber = () => {
                                     Logged in as <strong>{user.displayName}</strong>
                                 </p>
                                 <li className="px-4 py-2 hover:bg-gray-100">
-                                    <Link className="text-blue-500" to="/useroder">Update Profile</Link>
+                                    <Link className="text-blue-500" to="updateprofile">Update Profile</Link>
                                 </li>
                                 <li className="px-4 py-2 hover:bg-gray-100">
                                     <Link className="text-blue-500" to="/dashboard">Deshboard</Link>
@@ -107,7 +107,7 @@ const Navber = () => {
                                 
                             </li>
                             <li>
-                                <button onClick={handleLogout} className="btn btn-error w-full">
+                                <button onClick={handleLogout} className="btn btn-error w-full ">
                                     Log Out
                                 </button>
                             </li>

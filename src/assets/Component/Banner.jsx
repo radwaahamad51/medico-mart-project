@@ -10,7 +10,7 @@ const BannerSlider = () => {
 
   useEffect(() => {
     
-    fetch('http://localhost:5000/medichin-benner') 
+    fetch('https://assignment-12-server-sable-six.vercel.app/medichin-benner') 
       .then((response) => response.json())
       .then((data) => setBanners(data))
       .catch((error) => console.error('Error fetching banner data:', error));
