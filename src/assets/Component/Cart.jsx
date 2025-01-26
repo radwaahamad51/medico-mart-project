@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const CartPage = () => {
     const { user, cart } = useContext(AuthContext); // Assuming AuthContext provides user info
     const [carts, setCart] = useState([]);
     const [loading, setLoading] = useState(true);
     const [orders, setOrders] = useState([]);
-   
+
     // Fetch cart data from the database
     useEffect(() => {
         if (user) {
@@ -73,7 +74,7 @@ const CartPage = () => {
 
     //     //     })
     // };
-    const updateQuantity = (_id, newQuantity,unitPrice) => {
+    const updateQuantity = (_id, newQuantity, unitPrice) => {
         // Validate the new quantity
         if (isNaN(newQuantity) || newQuantity <= 0) {
             Swal.fire("Error", "Quantity must be a valid number greater than zero.", "error");
@@ -89,7 +90,7 @@ const CartPage = () => {
                 // Update the state with the new quantity
                 setCart((prevCart) =>
                     prevCart.map((item) =>
-                        item._id === _id ? { ...item, Quantity: newQuantity , Price: updatedPrice} : item
+                        item._id === _id ? { ...item, Quantity: newQuantity, Price: updatedPrice } : item
                     )
                 );
                 Swal.fire({
@@ -162,138 +163,148 @@ const CartPage = () => {
     };
 
 
+
+
+
     return (
-        <div className="container mx-auto px-4 py-6">
-            <h1 className="text-2xl font-bold mb-6">My Cart</h1>
+        <>
+            <Helmet>
+                <title>
+                    Medico | Cart
+                </title>
+            </Helmet>
+            <div className="container mx-auto px-4 py-6">
+                <h1 className="text-2xl font-bold mb-6">My Cart</h1>
 
-            {carts.length === 0 ? (
-                <p className="text-gray-600">Your cart is empty.</p>
-            ) : (
-                <div>
-                    <table className="w-full border-collapse border border-gray-300">
-                        <thead>
-                            <tr className="bg-gray-200">
-                                <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
-                                <th className="border border-gray-300 px-4 py-2 text-left">Company</th>
-                                <th className="border border-gray-300 px-4 py-2 text-center">
-                                    Price (৳)
-                                </th>
-                                <th className="border border-gray-300 px-4 py-2 text-center">
-                                    Quantity
-                                </th>
-                                <th className="border border-gray-300 px-4 py-2 text-center">Total</th>
-                                <th className="border border-gray-300 px-4 py-2 text-center">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {carts.map((medicine) => (
-                                <tr key={medicine.id}>
-                                    <td className="border border-gray-300 px-4 py-2">
-                                        {medicine.medichinname}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2">
-                                        {medicine.company || "N/A"}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        {medicine.Price}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        <div className="flex justify-center items-center gap-2">
-                                            <button
-                                                onClick={() => updateQuantity(medicine._id, medicine.Quantity - 1)}
-                                                className="bg-gray-200 px-2 py-1 rounded-md"
-                                                disabled={medicine.Quantity <= 1} // Prevent reducing below 1
-                                            >
-                                                -
-                                            </button>
-                                            <span>{medicine.Quantity}</span>
-                                            <button
-                                                onClick={() => updateQuantity(medicine._id, medicine.Quantity + 1)}
-                                                className="bg-gray-200 px-2 py-1 rounded-md"
-                                            >
-                                                +
-                                            </button>
-                                        </div>
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        ৳ {medicine.Price * medicine.Quantity}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        <button
-                                            onClick={() => handleDelete(medicine._id)}
-                                            className="bg-red-500 text-white px-4 py-2 rounded-md"
-                                        >
-                                            Remove
-                                        </button>
-                                    </td>
+                {carts.length === 0 ? (
+                    <p className="text-gray-600">Your cart is empty.</p>
+                ) : (
+                    <div>
+                        <table className="w-full border-collapse border border-gray-300">
+                            <thead>
+                                <tr className="bg-gray-200">
+                                    <th className="border border-gray-300 px-4 py-2 text-left">Name</th>
+                                    <th className="border border-gray-300 px-4 py-2 text-left">Company</th>
+                                    <th className="border border-gray-300 px-4 py-2 text-center">
+                                        Price (৳)
+                                    </th>
+                                    <th className="border border-gray-300 px-4 py-2 text-center">
+                                        Quantity
+                                    </th>
+                                    <th className="border border-gray-300 px-4 py-2 text-center">Total</th>
+                                    <th className="border border-gray-300 px-4 py-2 text-center">Actions</th>
                                 </tr>
-                            ))}
-                        </tbody>
-
-                        <tbody>
-                            {cart.map((medicine) => (
-                                <tr key={medicine.id}>
-                                    <td className="border border-gray-300 px-4 py-2">
-                                        {medicine.medichinname}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2">
-                                        {medicine.company || "N/A"}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        {medicine.Price}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        <div className="flex justify-center items-center gap-2">
+                            </thead>
+                            <tbody>
+                                {carts.map((medicine) => (
+                                    <tr key={medicine.id}>
+                                        <td className="border border-gray-300 px-4 py-2">
+                                            {medicine.medichinname}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2">
+                                            {medicine.company || "N/A"}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
+                                            {medicine.Price}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
+                                            <div className="flex justify-center items-center gap-2">
+                                                <button
+                                                    onClick={() => updateQuantity(medicine._id, medicine.Quantity - 1)}
+                                                    className="bg-gray-200 px-2 py-1 rounded-md"
+                                                    disabled={medicine.Quantity <= 1} // Prevent reducing below 1
+                                                >
+                                                    -
+                                                </button>
+                                                <span>{medicine.Quantity}</span>
+                                                <button
+                                                    onClick={() => updateQuantity(medicine._id, medicine.Quantity + 1)}
+                                                    className="bg-gray-200 px-2 py-1 rounded-md"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
+                                            ৳ {medicine.Price * medicine.Quantity}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
                                             <button
-                                                onClick={() => updateQuantity(medicine._id, medicine.Quantity - 1 )}
-                                                className="bg-gray-200 px-2 py-1 rounded-md"
-                                                disabled={medicine.Quantity <= 1} // Prevent reducing below 1
+                                                onClick={() => handleDelete(medicine._id)}
+                                                className="bg-red-500 text-white px-4 py-2 rounded-md"
                                             >
-                                                -
+                                                Remove
                                             </button>
-                                            <span>{medicine.Quantity}</span>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+
+                            <tbody>
+                                {cart.map((medicine) => (
+                                    <tr key={medicine.id}>
+                                        <td className="border border-gray-300 px-4 py-2">
+                                            {medicine.medichinname}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2">
+                                            {medicine.company || "N/A"}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
+                                            {medicine.Price}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
+                                            <div className="flex justify-center items-center gap-2">
+                                                <button
+                                                    onClick={() => updateQuantity(medicine._id, medicine.Quantity - 1)}
+                                                    className="bg-gray-200 px-2 py-1 rounded-md"
+                                                    disabled={medicine.Quantity <= 1} // Prevent reducing below 1
+                                                >
+                                                    -
+                                                </button>
+                                                <span>{medicine.Quantity}</span>
+                                                <button
+                                                    onClick={() => updateQuantity(medicine._id, medicine.Quantity + 1)}
+                                                    className="bg-gray-200 px-2 py-1 rounded-md"
+                                                >
+                                                    +
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
+                                            ৳ {medicine.Price * medicine.Quantity}
+                                        </td>
+                                        <td className="border border-gray-300 px-4 py-2 text-center">
                                             <button
-                                                onClick={() => updateQuantity(medicine._id, medicine.Quantity + 1 )}
-                                                className="bg-gray-200 px-2 py-1 rounded-md"
+                                                onClick={() => handleDelete(medicine._id)}
+                                                className="bg-red-500 text-white px-4 py-2 rounded-md"
                                             >
-                                                +
+                                                Remove
                                             </button>
-                                        </div>
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        ৳ {medicine.Price * medicine.Quantity}
-                                    </td>
-                                    <td className="border border-gray-300 px-4 py-2 text-center">
-                                        <button
-                                            onClick={() => handleDelete(medicine._id)}
-                                            className="bg-red-500 text-white px-4 py-2 rounded-md"
-                                        >
-                                            Remove
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
 
-                    <div className="flex justify-between items-center mt-6">
-                        <button
-                            onClick={clearCart}
-                            className="bg-red-500 text-white px-4 py-2 rounded-md"
-                        >
-                            Clear Cart
-                        </button>
+                        <div className="flex justify-between items-center mt-6">
+                            <button
+                                onClick={clearCart}
+                                className="bg-red-500 text-white px-4 py-2 rounded-md"
+                            >
+                                Clear Cart
+                            </button>
 
-                        <Link
-                            to="/checkout"
-                            className="bg-blue-500 text-white px-6 py-2 rounded-md"
-                        >
-                            Checkout
-                        </Link>
+                            <Link
+                                to="/checkout"
+                                className="bg-blue-500 text-white px-6 py-2 rounded-md"
+                            >
+                                Checkout
+                            </Link>
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </>
     );
 };
 

@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
+import useSeller from "../Hooks/userseller";
 
 const Deshbord = () => {
     const [isAdmin] = useAdmin();
+    const [isseller] = useSeller()
     return (
         <div className="flex ">
             {/* Sidebar */}
@@ -32,14 +34,24 @@ const Deshbord = () => {
                 </ul></>
               } 
                 <hr />
-                <ul className="space-y-2">
+               {isseller?
+                <>
+                 <ul className="space-y-2">
                     <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Dashboard</li>
                     <Link to={'manage'}><li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Manage Medicines</li></Link>
                     <Link to={'paymenyhistoryuser'}><li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Payment History</li></Link>
                     <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Ask For Advertisement</li>
 
                     <Link to={'/'}>  <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Home</li></Link>
-                </ul>
+                </ul></>:<>
+                <ul className="space-y-2">
+                  
+                    <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Payment History</li>
+                   
+
+                    <Link to={'/'}>  <li className="hover:bg-gray-700 p-2 rounded cursor-pointer">Home</li></Link>
+                </ul></>
+               }
 
             </div>
 

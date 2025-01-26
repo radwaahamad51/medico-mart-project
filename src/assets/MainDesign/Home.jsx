@@ -8,6 +8,7 @@ const Home = () => {
 
     return (
         <div>
+            
 
 
             <div className="bg-cover bg-center bg-no-repeat h-64">

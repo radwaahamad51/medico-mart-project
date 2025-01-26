@@ -94,6 +94,7 @@ const AllUsers = () => {
                             <th>Email</th>
                             <th>Role</th>
                             <th>Action</th>
+                            <th>Role</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -119,12 +120,18 @@ const AllUsers = () => {
                                         <FaTrashAlt className="text-red-600"></FaTrashAlt>
                                     </button>
                                 </td>
-                                <button
+
+{
+user.role === 'seller' ? 'Seller' : <button
                                     onClick={() => handleMakeSeller(user)}
                                     className="btn btn-lg bg-orange-500">
                                     <FaUsers className="text-white 
                                         text-2xl"></FaUsers>
                                 </button>
+
+}
+
+                                
 
                             </tr>)
 

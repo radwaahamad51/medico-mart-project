@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ProductDetails = () => {
     const [quantity, setQuantity] = useState(1);
@@ -78,73 +79,80 @@ const ProductDetails = () => {
             });
     }
 
+
     return (
-        <div className="p-6 bg-gray-50">
-            {cart.map((product, index) => (
-                <form onSubmit={handeladd} >
-                    <div
-                        key={index}
-                        className="flex flex-col md:flex-row gap-8 mb-8 bg-white p-6 rounded-lg shadow-md"
-                    >
-                        <h1>radaw</h1>
-                        {/* Product Image */}
-                        <div className="flex-1">
-                            <img
-                                name="image"
-                                src={product.image || "https://via.placeholder.com/300"}
-                                alt={product.name}
-                                className="rounded-lg w-full max-w-sm mx-auto"
-                            />
-                        </div>
+        <>
+            <Helmet>
+                <title>
+                    Medico | Buy
+                </title>
+            </Helmet>
+            <div className="p-6 bg-gray-50">
+                {cart.map((product, index) => (
+                    <form onSubmit={handeladd} >
+                        <div
+                            key={index}
+                            className="flex flex-col md:flex-row gap-8 mb-8 bg-white p-6 rounded-lg shadow-md"
+                        >
 
-                        {/* Product Details */}
-                        <div className="flex-1">
-                            <input type="text"
-                                name="name"
-                                value={product.name}
-                                disabled
-                                className="text-2xl font-bold text-gray-800"
-                            />
-                            <p className="text-sm text-gray-600"> Quentity : {product.quantity || "N/A"}</p>
-                            <input type="text"
-                                name="company"
-                                value={product.company}
-                                disabled
-                                className="text-sm text-gray-500 mb-4"
-                            />
-
-
-                            {/* Pricing Section */}
-                            <div className="mb-4">
-                                {product.originalPrice && (
-                                    <p className="text-gray-500 text-sm line-through">
-                                        MRP ৳ {product.originalPrice}
-                                    </p>
-                                )}
-                                {product.discount && (
-                                    <p className="text-green-600 text-sm">{product.discount}% Off</p>
-                                )}
-                                <h1 name="price" className="text-2xl font-bold text-blue-600" value={cart.price}>
-                                    Best Price ৳ {product.price}{" "}
-                                    <input type="text"
-                                        name="price"
-                                        value={product.price}
-                                        disabled
-                                        className="text-sm text-gray-500 mb-4 hidden"
-                                    />
-                                    <span className="text-sm font-normal text-gray-500">
-                                        /Pack
-                                    </span>
-                                </h1>
-
-
-
-
-
+                            {/* Product Image */}
+                            <div className="flex-1">
+                                <img
+                                    name="image"
+                                    src={product.image || "https://via.placeholder.com/300"}
+                                    alt={product.name}
+                                    className="rounded-lg w-full max-w-sm mx-auto"
+                                />
                             </div>
 
-                            {/* Pack Selector */}
-                            {/* <div className="mb-4">
+                            {/* Product Details */}
+                            <div className="flex-1">
+                                <input type="text"
+                                    name="name"
+                                    value={product.name}
+                                    disabled
+                                    className="text-2xl font-bold text-gray-800"
+                                />
+                                <p className="text-sm text-gray-600"> Quentity : {product.quantity || "N/A"}</p>
+                                <input type="text"
+                                    name="company"
+                                    value={product.company}
+                                    disabled
+                                    className="text-sm text-gray-500 mb-4"
+                                />
+
+
+                                {/* Pricing Section */}
+                                <div className="mb-4">
+                                    {product.originalPrice && (
+                                        <p className="text-gray-500 text-sm line-through">
+                                            MRP ৳ {product.originalPrice}
+                                        </p>
+                                    )}
+                                    {product.discount && (
+                                        <p className="text-green-600 text-sm">{product.discount}% Off</p>
+                                    )}
+                                    <h1 name="price" className="text-2xl font-bold text-blue-600" value={cart.price}>
+                                        Best Price ৳ {product.price}{" "}
+                                        <input type="text"
+                                            name="price"
+                                            value={product.price}
+                                            disabled
+                                            className="text-sm text-gray-500 mb-4 hidden"
+                                        />
+                                        <span className="text-sm font-normal text-gray-500">
+                                            /Pack
+                                        </span>
+                                    </h1>
+
+
+
+
+
+                                </div>
+
+                                {/* Pack Selector */}
+                                {/* <div className="mb-4">
                             <select
                                 className="w-full border rounded-md px-4 py-2 text-gray-700 focus:ring-2 focus:ring-blue-500"
                                 defaultValue={product.packSize || "Select Pack"}
@@ -157,59 +165,60 @@ const ProductDetails = () => {
                             </select>
                         </div> */}
 
-                            {/* Quantity Selector */}
-                            <div className="flex items-center mb-6">
+                                {/* Quantity Selector */}
+                                <div className="flex items-center mb-6">
+                                    <button
+                                        type="button"
+                                        className="bg-gray-200 px-4 py-2 rounded-l-md text-gray-600"
+                                        onClick={handleDecrease}
+                                    >
+                                        -
+                                    </button>
+                                    <input
+                                        max={maxQuantity}
+                                        min={1}
+                                        placeholder={`Max: ${maxQuantity}`}
+                                        name="Quantity"
+                                        type="text"
+                                        className="w-12 text-center border-t border-b text-white"
+                                        value={quantity}
+                                        readOnly
+                                    />
+                                    <button
+                                        type="button"
+                                        className="bg-gray-200 px-4 py-2 rounded-r-md text-gray-600"
+                                        onClick={handleIncrease}
+                                    >
+                                        +
+                                    </button>
+                                </div>
+
+
+                                <div className="hidden">
+                                    <label className="block text-gray-600">Buying Date</label>
+                                    <input
+                                        type="text"
+                                        value={new Date().toLocaleString()}
+                                        disabled
+                                        className="w-full px-4 py-2 border rounded-lg text-gray-600"
+                                        name="date"
+                                    />
+                                </div>
+
+                                {/* Add to Cart Button */}
                                 <button
-                                    type="button"
-                                    className="bg-gray-200 px-4 py-2 rounded-l-md text-gray-600"
-                                    onClick={handleDecrease}
+                                    type="submit"
+                                    className="w-full bg-blue-500 text-white py-2 rounded-md text-lg"
+                                    onClick={() => addToCart(product, quantity)}
                                 >
-                                    -
-                                </button>
-                                <input
-                                    max={maxQuantity}
-                                    min={1}
-                                    placeholder={`Max: ${maxQuantity}`}
-                                    name="Quantity"
-                                    type="text"
-                                    className="w-12 text-center border-t border-b text-white"
-                                    value={quantity}
-                                    readOnly
-                                />
-                                <button
-                                    type="button"
-                                    className="bg-gray-200 px-4 py-2 rounded-r-md text-gray-600"
-                                    onClick={handleIncrease}
-                                >
-                                    +
+                                    Add to cart
                                 </button>
                             </div>
-
-
-                            <div className="hidden">
-                                <label className="block text-gray-600">Buying Date</label>
-                                <input
-                                    type="text"
-                                    value={new Date().toLocaleString()}
-                                    disabled
-                                    className="w-full px-4 py-2 border rounded-lg text-gray-600"
-                                    name="date"
-                                />
-                            </div>
-
-                            {/* Add to Cart Button */}
-                            <button
-                                type="submit"
-                                className="w-full bg-blue-500 text-white py-2 rounded-md text-lg"
-                                onClick={() => addToCart(product, quantity)}
-                            >
-                                Add to cart
-                            </button>
                         </div>
-                    </div>
-                </form>
-            ))}
-        </div>
+                    </form>
+                ))}
+            </div>
+        </>
     );
 };
 
