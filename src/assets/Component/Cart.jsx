@@ -30,50 +30,7 @@ const CartPage = () => {
         }
     }, [user]);
 
-    // Update cart quantity
-    // const updateQuantity = (_id, newQuantity) => {
-    //     // Check if newQuantity is a valid number
-    //     if (isNaN(newQuantity) || newQuantity <= 0) {
-    //         console.error("Invalid quantity value");
-    //         return;
-    //     }
-
-    //     // Ensure that you're sending all the necessary data in the request body
-    //     const updatedItem = { Quantity: newQuantity };
-    //     console.log(updatedItem)
-
-    //     axios
-    //         .put(`http://localhost:5000/medichin-oder/${_id}`, updatedItem)
-    //         .then(() => {
-    //             setCart((prevCart) =>
-    //                 prevCart.map((item) =>
-    //                     item.id === _id ? { ...item, Quantity: newQuantity } : item
-    //                 )
-    //             );
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error updating quantity:", error);
-    //         });
-    //     // fetch(`http://localhost:5000/medichin-oder/${_idid}`, {
-    //     //     method: 'PUT',
-    //     //     headers: {
-    //     //         'content-type': 'application/json'
-    //     //     },
-    //     //     body: JSON.stringify(updatedItem)
-    //     // })
-    //     //     .then(res => res.json())
-    //     //     .then(data => {
-    //     //         // console.log(data)
-    //     //         Swal.fire({
-    //     //             position: "top-end",
-    //     //             icon: "success",
-    //     //             title: "Upadate successfully",
-    //     //             showConfirmButton: false,
-    //     //             timer: 1500
-    //     //         });
-
-    //     //     })
-    // };
+  
     const updateQuantity = (_id, newQuantity, unitPrice) => {
         // Validate the new quantity
         if (isNaN(newQuantity) || newQuantity <= 0) {
