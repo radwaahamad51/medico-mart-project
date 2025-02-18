@@ -39,7 +39,7 @@ const AdminDashboard = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <div className="flex items-center space-x-4 mb-6">
-        <img src={user.photoUrl} alt="User Avatar" className="w-20 h-20 rounded-full object-cover" />
+        <img src={user.photoURL} alt="User Avatar" className="w-20 h-20 rounded-full object-cover" />
         <div>
           <p className="text-xl font-semibold text-gray-800">{user.displayName}</p>
           <p className="text-sm text-gray-600">{user.email}</p>
