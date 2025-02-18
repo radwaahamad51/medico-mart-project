@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AdminDashboard = () => {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user)
 
   useEffect(() => {
     // Fetch all payments from the backend
@@ -35,6 +38,14 @@ const AdminDashboard = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
+      <div className="flex items-center space-x-4 mb-6">
+        <img src={user.photoUrl} alt="User Avatar" className="w-20 h-20 rounded-full object-cover" />
+        <div>
+          <p className="text-xl font-semibold text-gray-800">{user.displayName}</p>
+          <p className="text-sm text-gray-600">{user.email}</p>
+        </div>
+      </div>
+
       <h1 className="text-2xl font-bold mb-6">Admin Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Total Sales Revenue */}
